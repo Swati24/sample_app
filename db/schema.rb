@@ -22,17 +22,10 @@ ActiveRecord::Schema.define(:version => 20130909125856) do
     t.string   "state"
   end
 
-  create_table "user_types", :force => true do |t|
-    t.string   "name"
-    t.integer  "users_count"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.integer  "user_type_id"
-    t.integer  "articles_count"
+    t.integer  "articles_count",         :default => 0
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
