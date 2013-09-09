@@ -13,7 +13,6 @@ gem 'aasm'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'heroku', '~> 2.33.0'
-gem 'feedzirra'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
