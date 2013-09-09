@@ -22,3 +22,33 @@ h2. Assumptions
 * "Only Admin can create an editor and the editor will have to forgot password to change the password and login. An editor can be notified via email."
 * "An article can have only two states - drafted and published"
 * "Once an article gets published it cannot be ubpublished or converted to drafted state."
+
+h2. Set up
+
+Run the below commands to set up the project.
+* Clone the repo - git clone https://github.com/Swati24/sample_app.git
+* Install Gems - bundle install
+* Create Database - rake db:create
+* Migrate Database - rake db:migrate
+* Add some dummy users to your database - rake db:seed. This will add 3 users in your database with following details
+<pre>
+Admin
+	Name: Admin
+	Email: admin@sample.com
+	Password: testing
+	Role:
+
+Editor
+	Name: Editor
+	Email: editor@sample.com
+	Password: testing
+	Role: editor
+
+Reporter
+	Name: Reporter
+	Email: reporter@sample.com
+	Password: testing
+	Role: reporter
+
+</pre>
+* Run rails server - rails s

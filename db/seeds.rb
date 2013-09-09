@@ -8,5 +8,5 @@
 require 'feedzirra'
 
 user = User.create(name: "Admin", email: "admin@sample.com", password: "testing", role: "admin")
-
-
+user = User.create(name: "Editor", email: "editor@sample.com", password: "testing", role: "editor")
+user = User.create(name: "Reporter", email: "reporter@sample.com", password: "testing", role: "reporter")
