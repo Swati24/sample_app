@@ -15,9 +15,9 @@ gem 'will_paginate'
 gem 'heroku', '~> 2.33.0'
 gem 'pg'
 gem 'thin'
+gem 'sass-rails',   '~> 3.2.3'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
