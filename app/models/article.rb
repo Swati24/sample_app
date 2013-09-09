@@ -23,14 +23,9 @@ class Article < ActiveRecord::Base
   aasm do
     state :drafted, :initial => true
     state :published
-    state :unpublished
 
     event :publish do
       transitions :from => :drafted, :to => :published
-    end
-
-    event :unpublish do
-      transitions :from => :published, :to => :unpublished
     end
   end
 

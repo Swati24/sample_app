@@ -63,7 +63,7 @@ module SampleApp
     config.assets.version = '1.0'
 
 
-    #Rescue from Cancan controller exception.
+    config.gem "feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
 
   end
 
