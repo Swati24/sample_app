@@ -1,0 +1,5 @@
+Assumptions:
+
+A User can have only one role.
+
+An editor can create or publich any article.

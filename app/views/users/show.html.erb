@@ -1,0 +1,18 @@
+<h2>User</h2>
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @user.role.capitalize %>
+</p>
+
+<p>
+  <b>Articles count:</b>
+  <%= @user.articles_count.to_i %>
+</p>
+
+<%= link_to "Notify Editor via email", notify_editor_user_path(@user), :class => 'btn btn-info' %>
+<%= link_to 'Back', :back, :class => 'btn btn-primary' %>

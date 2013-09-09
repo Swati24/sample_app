@@ -1,0 +1,16 @@
+
+<ul class="nav">
+  <li><%= link_to "Take me Home", root_path, :class => 'brand' %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to "Articles to be published", drafts_articles_path %></li>
+    <% if current_user.role? :admin %>
+      <li><%= link_to 'Create New Editor', new_editor_users_path %></li>
+      <li><%= link_to 'All Editors', editors_path %></li>
+    <% end %>
+    <li><%= link_to "Change Password", edit_user_registration_path %></li>
+    <li><%= link_to 'Logout', destroy_user_session_path, :method =>'delete' %></li>
+  <% else %>
+    <li><%= link_to 'Login', new_user_session_path %></li>
+    <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <% end %>
+</ul>

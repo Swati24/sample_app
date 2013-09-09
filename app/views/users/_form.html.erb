@@ -1,0 +1,7 @@
+<%= simple_form_for user, url: create_editor_users_path, method: :post do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :role, as: :hidden, input_html: {value: "editor"} %>
+  <%= f.button :submit, "Create Editor", :class => 'btn btn-primary' %>
+<% end %>

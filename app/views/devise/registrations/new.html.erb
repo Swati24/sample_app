@@ -1,0 +1,13 @@
+<h2>Sign up</h2>
+
+<%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+
+  <%= f.input :name, input_html: {autofocus: true} %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :role, as: :hidden, input_html: {value: "reporter"} %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<%= render "devise/shared/links" %>

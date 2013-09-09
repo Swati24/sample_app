@@ -1,0 +1,41 @@
+class UsersController < ApplicationController
+
+  before_filter :validate_record_exists, only: [:show, :notify_editor]
+  load_and_authorize_resource
+
+  def show
+
+  end
+
+  def create_editor
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to @user, notice: 'Editor was successfully created.'
+    else
+      render action: "new"
+    end
+  end
+
+  def new_editor
+    @user = User.new
+  end
+
+  def notify_editor
+    @user.notify_via_email
+    redirect_to :back, flash[:notice] => "Email sent!!"
+  end
+
+  def editors
+    @editors = User.editors.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  private
+
+    def validate_record_exists
+      @user = User.find_by_id(params[:id])
+      if @user.nil?
+        flash[:error] = "Record doesn't exist"
+        redirect_to root_path and return
+      end
+    end
+end
