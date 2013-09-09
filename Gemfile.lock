@@ -192,5 +192,6 @@ DEPENDENCIES
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   simple_form
+  thin
   uglifier (>= 1.0.3)
   will_paginate
