@@ -5,8 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'feedzirra'
-
-user = User.create(name: "Admin", email: "admin@sample.com", password: "testing", role: "admin")
-user = User.create(name: "Editor", email: "editor@sample.com", password: "testing", role: "editor")
-user = User.create(name: "Reporter", email: "reporter@sample.com", password: "testing", role: "reporter")
+#
+["admin", "reporter", "editor"].each do |value|
+	user = User.create(name: value.capitalize, email: "#{value}@sample.com", password: "testing", role: value)
+end
