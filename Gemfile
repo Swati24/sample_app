@@ -15,7 +15,11 @@ gem 'will_paginate'
 gem 'heroku', '~> 2.33.0'
 gem 'pg'
 gem 'thin'
+<<<<<<< HEAD
 # gem 'bootstrap-sass'
+=======
+gem 'twitter-bootstrap-rails'
+>>>>>>> 270de454023797775bacbd848efa8b03b64e2f3e
 
 group :assets do
  gem "therubyracer"
@@ -23,7 +27,6 @@ group :assets do
  gem 'sass-rails',   '~> 3.2.3'
  gem 'therubyracer', :platforms => :ruby
  gem 'uglifier', '>= 1.0.3'
- gem 'twitter-bootstrap-rails'
 end
 
 group :development do
