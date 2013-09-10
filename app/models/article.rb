@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :title, :content
 
   belongs_to :user, :counter_cache => true
-  scope :latest, order('created_at DESC')
+  scope :latest, order('updated_at DESC')
 
   aasm_column :state
   aasm do

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :validate_record_exists, only: [:show, :notify_editor]
+  before_filter :validate_record_exists, only: [:show, :notify_editor, :destroy]
   load_and_authorize_resource
 
   def show
@@ -27,8 +27,7 @@ class UsersController < ApplicationController
 
   def notify_editor
     @user.notify_via_email
-    flash[:notice] = "Email sent!!"
-    redirect_to :back
+    redirect_to :back, notice: "Email sent!!"
   end
 
   def editors
@@ -37,8 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:notice] = "Editor deleted"
-    redirect_to root_path
+    redirect_to editors_path, notice: "Editor deleted"
   end
 
   private

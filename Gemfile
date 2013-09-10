@@ -16,7 +16,8 @@ gem 'heroku', '~> 2.33.0'
 gem 'pg'
 gem 'thin'
 gem 'twitter-bootstrap-rails'
-
+gem 'activeadmin'
+gem 'turbolinks'
 
 group :assets do
  gem "therubyracer"
@@ -31,6 +32,12 @@ group :development do
 	gem "debugger"
 	gem 'better_errors'
 	gem 'mailcatcher'
+	gem 'rack-mini-profiler'
+  gem 'railroady'
+  gem 'rails-footnotes', '>= 3.7.5.rc4'
+  gem 'bullet'
+  gem 'quiet_assets'
+  gem 'lol_dba'
 end
 
 

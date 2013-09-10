@@ -1,6 +1,6 @@
 
 <ul class="nav">
-  <li><%= link_to "Take me Home", root_path, :class => 'brand' %></li>
+  <li><%= link_to "Take me Home", root_path, class: 'brand' %></li>
   <% if user_signed_in? %>
     <li><%= link_to "Articles to be published", drafts_articles_path %></li>
     <% if current_user.role? :admin %>

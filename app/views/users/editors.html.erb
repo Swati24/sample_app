@@ -12,13 +12,13 @@
         </tr>
       </thead>
       <tbody>
-        <%= link_to 'New editor', new_editor_users_path, :class => 'btn btn-primary pull-right' %>
+        <%= link_to 'New editor', new_editor_users_path, class: 'btn btn-primary pull-right' %>
         <% @editors.each do |editor| %>
           <tr>
             <td><%= link_to editor.name, editor %></td>
             <td><%= editor.email %></td>
             <td><%= editor.articles_count.to_i %></td>
-            <td><%= link_to 'Destroy', editor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-danger' if can? :update, @editor %></td>
+            <td><%= link_to 'Destroy', editor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-danger' if can? :update, @editor %></td>
           </tr>
         <% end %>
       </tbody>

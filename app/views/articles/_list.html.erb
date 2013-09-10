@@ -1,6 +1,7 @@
 <% unless articles.count == 0 %>
   <h2>Articles</h2>
   <div class="span8">
+    <%= link_to 'New Article', new_article_path, :class => 'btn btn-primary pull-right' if current_user and loc!= "show" %>
     <div class="table-responsive">
       <table class="table table-condensed  table-striped table-bordered">
         <thead>
@@ -13,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= link_to 'New Article', new_article_path, :class => 'btn btn-primary pull-right' if current_user and loc!= "show" %>
+
           <% articles.each do |article| %>
             <tr>
               <td><%= link_to article.title, article %></td>

@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   #Before filter to implement authorization.
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :validate_record_exists, only: [:show, :edit, :update, :publish, :destroy]
   load_and_authorize_resource
 
   def index
@@ -8,17 +9,10 @@ class ArticlesController < ApplicationController
   end
 
 
-  def show
-
+  [:show, :new, :edit].each do |method|
+    define_method method do; end
   end
 
-  def new
-
-  end
-
-  def edit
-
-  end
 
   def create
     @article = Article.new(params[:article])
@@ -40,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to articles_url
+    redirect_to articles_path, notice: "Article deleted"
   end
 
   def drafts
@@ -49,7 +43,17 @@ class ArticlesController < ApplicationController
 
   def publish
     @article.publish!
-    redirect_to drafts_articles_path
+    redirect_to drafts_articles_path, notice: "Artcle was successfully published!!"
   end
+
+  private
+
+    def validate_record_exists
+      @article = User.find_by_id(params[:id])
+      if @article.nil?
+        flash[:error] = "Record doesn't exist"
+        redirect_to root_path and return
+      end
+    end
 
 end

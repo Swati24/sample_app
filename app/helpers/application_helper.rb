@@ -10,7 +10,7 @@ module ApplicationHelper
 			end
 		else
 			if article.state? :drafted and ability.can? :publish, article
-				actions << button_to('Publish', publish_article_path(article), :method => :put, :class => 'btn btn-success')
+				actions << button_to('Publish', publish_article_path(article), method: :put, class: 'btn btn-success')
 			end
 		end
 		return actions
