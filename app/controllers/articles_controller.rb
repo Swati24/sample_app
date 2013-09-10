@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
   #Before filter to implement authorization.
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :publish]
   before_filter :validate_record_exists, only: [:show, :edit, :update, :publish, :destroy]
   load_and_authorize_resource
 
   def index
-    @articles = Article.published.latest.paginate(:page => params[:page], :per_page => 10)
+    @articles = Article.published.latest.includes(:user).paginate(:page => params[:page], :per_page => 10)
   end
 
 
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   end
 
   def drafts
-    @articles = Article.valid_draft_articles(current_user).paginate(:page => params[:page], :per_page => 10)
+    @articles = Article.valid_draft_articles(current_user).includes(:user).paginate(:page => params[:page], :per_page => 10)
   end
 
   def publish
@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
     def validate_record_exists
-      @article = User.find_by_id(params[:id])
+      @article = Article.find_by_id(params[:id])
       if @article.nil?
         flash[:error] = "Record doesn't exist"
         redirect_to root_path and return

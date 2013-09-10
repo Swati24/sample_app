@@ -33,6 +33,12 @@ SampleApp::Application.routes.draw do
 
   match 'editors' => 'users#editors', :as => :editors
 
+  root :to => 'articles#index'
+
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -82,7 +88,6 @@ SampleApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'articles#index'
 
   # See how all your routes lay out with "rake routes"
 

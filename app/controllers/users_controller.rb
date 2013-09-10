@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def show
     if current_user.role? :reporter and current_user != @user
-      @articles = @user.articles.published.paginate(page: params[:page], per_page: 5)
+      @articles = @user.articles.published.includes(:user).paginate(page: params[:page], per_page: 5)
     else
-      @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+      @articles = @user.articles.includes(:user).paginate(page: params[:page], per_page: 5)
     end
   end
 

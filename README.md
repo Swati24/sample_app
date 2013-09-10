@@ -28,7 +28,7 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 * [RailsFootnotes]()
 * [Bullet]()
 * [QuietAssets]()
-* [LolDba]()
+* [LolDba](https://github.com/plentz/lol_dba): to scan your application models and displays a list of columns that probably should be indexed.
 
 
 

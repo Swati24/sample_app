@@ -13,7 +13,7 @@
 
 class Article < ActiveRecord::Base
 	include AASM
-  attr_accessible :content, :title, :user_id
+  attr_accessible :content, :title, :user_id, :state
 
   validates_presence_of :title, :content
 

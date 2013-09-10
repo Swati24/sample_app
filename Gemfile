@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem "mysql2"
 gem 'devise'
-gem 'jquery-rails'
+gem 'jquery-rails', "< 3.0.0"
 gem 'cancan'
 gem 'aasm'
 gem 'simple_form'
