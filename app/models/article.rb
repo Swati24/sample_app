@@ -21,7 +21,7 @@ class Article < ActiveRecord::Base
   scope :latest, order('updated_at DESC')
 
   aasm_column :state
-  aasm do
+  aasm :whiny_transitions => false do
     state :drafted, :initial => true
     state :published
 
