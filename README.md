@@ -18,13 +18,13 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 * [AASM](https://github.com/aasm/aasm): is a tool to manage states.
 * [BetterErrors](https://github.com/charliesome/better_errors): is a tool to replace the standard Rails error page with a much better and more useful error page
 * [Mailcatcher](https://github.com/sj26/mailcatcher): is a tool to catches mail and serves it through a dream.
-* [Annotate](https://github.com/ctran/annotate_models) is a tool to summarize the current schema to the top or bottom of models, fixtures, routes etc.
+* [Annotate](https://github.com/ctran/annotate_models): is a tool to summarize the current schema to the top or bottom of models, fixtures, routes etc.
 * [WillPaginate-Bootstrap](https://github.com/mislav/will_paginate) for styled pagination.
 * [ActiveAdmin](https://github.com/gregbell/active_admin): for creating elegant backends for website administration.
 * [Turbolinks](https://github.com/rails/turbolinks/): to intsruct browser not to recompile the JavaScript and CSS between each page change.
 * [Heroku](https://github.com/heroku/heroku): For Server Hosting
-* [Rack-Mini-Profiler]()
-* [RailRoady](https://github.com/SamSaffron/MiniProfiler/tree/master/Ruby):
+* [Rack-Mini-Profiler](https://github.com/harleyttd/miniprofiler): to display speed badge for every html page.
+* [RailRoady](https://github.com/SamSaffron/MiniProfiler/tree/master/Ruby): to generate model and controller UML class diagram generator.
 * [RailsFootnotes](https://github.com/josevalim/rails-footnotes): to display footnotes in your application for easy debugging, such as sessions, request parameters, cookies, filter chain, routes, queries, etc.
 * [Bullet](https://github.com/flyerhzm/bullet): to notify when one should add eager loading (N+1) queries
 * [QuietAssets](https://github.com/evrone/quiet_assets): to turn off the Rails asset pipeline log
@@ -95,13 +95,17 @@ Reporter
 ```ruby
 rails s
 ```
+
 ### Start using the application
 
 Find this app on http://sampleapp24.herokuapp.com/
-	Login into the app as per the using the credentials of the desired role.
+
+Login into the app as per the using the credentials of the desired role.
 
 To access Admin - http://sampleapp24.herokuapp.com/admin
+
 	Admin Login credentials
+
 	```console
 	email: admin@example.com
 	password: password
