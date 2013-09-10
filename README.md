@@ -20,14 +20,14 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 * [Mailcatcher](https://github.com/sj26/mailcatcher): is a tool to catches mail and serves it through a dream.
 * [Annotate](https://github.com/ctran/annotate_models) is a tool to summarize the current schema to the top or bottom of models, fixtures, routes etc.
 * [WillPaginate-Bootstrap](https://github.com/mislav/will_paginate) for styled pagination.
-* [ActiveAdmin]()
-* [Turbolinks]()
-* [Heroku]()
+* [ActiveAdmin](https://github.com/gregbell/active_admin): for creating elegant backends for website administration.
+* [Turbolinks](https://github.com/rails/turbolinks/): to intsruct browser not to recompile the JavaScript and CSS between each page change.
+* [Heroku](https://github.com/heroku/heroku): For Server Hosting
 * [Rack-Mini-Profiler]()
-* [RailRoady]()
-* [RailsFootnotes]()
-* [Bullet]()
-* [QuietAssets]()
+* [RailRoady](https://github.com/SamSaffron/MiniProfiler/tree/master/Ruby):
+* [RailsFootnotes](https://github.com/josevalim/rails-footnotes): to display footnotes in your application for easy debugging, such as sessions, request parameters, cookies, filter chain, routes, queries, etc.
+* [Bullet](https://github.com/flyerhzm/bullet): to notify when one should add eager loading (N+1) queries
+* [QuietAssets](https://github.com/evrone/quiet_assets): to turn off the Rails asset pipeline log
 * [LolDba](https://github.com/plentz/lol_dba): to scan your application models and displays a list of columns that probably should be indexed.
 
 
@@ -50,20 +50,46 @@ Run the below commands to set up the project.
 * Create Database - rake db:create
 * Migrate Database - rake db:migrate
 * Add some dummy users to your database - rake db:seed. This will add 3 users in your database with following details
-				Admin
-					Name: Admin
-					Email: admin@sample.com
-					Password: testing
-					Role:
-				Editor
-					Name: Editor
-					Email: editor@sample.com
-					Password: testing
-					Role: editor
-				Reporter
-					Name: Reporter
-					Email: reporter@sample.com
-					Password: testing
-					Role: reporter
+
+```console
+Admin
+	Name: Admin
+	Email: admin@sample.com
+	Password: testing
+	Role: admin
+Editor
+	Name: Editor
+	Email: editor@sample.com
+	Password: testing
+	Role: editor
+Reporter
+	Name: Reporter
+	Email: reporter@sample.com
+	Password: testing
+	Role: reporter
+```
 
 * Run rails server - rails s
+
+### Useful Commands
+
+* To find missing indexes:
+```ruby
+rake db:find_indexes
+```
+
+* To generate a railroday map for Models
+```ruby
+railroady -M | neato -Tpng > models.png
+```
+* To install rails footnotes
+```ruby
+rails generate rails_footnotes:install
+```
+
+* To access Admin
+```ruby
+url: http://sampleapp24.herokuapp.com/admin
+email: admin@example.com
+password: password
+```
