@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @articles = Article.published.paginate(:page => params[:page], :per_page => 10)
+    @articles = Article.published.latest.paginate(:page => params[:page], :per_page => 10)
   end
 
 

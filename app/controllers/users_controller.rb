@@ -22,11 +22,18 @@ class UsersController < ApplicationController
 
   def notify_editor
     @user.notify_via_email
-    redirect_to :back, flash[:notice] => "Email sent!!"
+    flash[:notice] = "Email sent!!"
+    redirect_to :back
   end
 
   def editors
     @editors = User.editors.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def destroy
+    @user.destroy
+    flash[:notice] = "Editor deleted"
+    redirect_to root_path
   end
 
   private

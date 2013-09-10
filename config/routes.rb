@@ -19,7 +19,7 @@ SampleApp::Application.routes.draw do
     get :signup , :to => "devise/registrations#new"
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :destroy] do
     collection do
       get 'new_editor'
       post 'create_editor'

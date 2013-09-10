@@ -1,34 +1,32 @@
 <h2>Editors</h2>
 <div class="span8">
-<div class="table-responsive">
-<table class="table table-condensed  table-striped">
-  <thead>
-    <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Articles count</th>
-    <th></th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
-
-<% @editors.each do |editor| %>
-  <tr>
-    <td><%= link_to editor.name, editor %></td>
-    <td><%= editor.email %></td>
-    <td><%= editor.articles_count.to_i %></td>
-    <% if can? :update, @editor %>
-      <td><%= link_to 'Destroy', editor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-danger' %></td>
-    <% end %>
-  </tr>
-<% end %>
- </tbody>
-</table>
-<%= link_to 'New editor', new_editor_users_path, :class => 'btn btn-primary' %>
-</div>
+  <div class="table-responsive">
+    <table class="table table-condensed  table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Articles count</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= link_to 'New editor', new_editor_users_path, :class => 'btn btn-primary pull-right' %>
+        <% @editors.each do |editor| %>
+          <tr>
+            <td><%= link_to editor.name, editor %></td>
+            <td><%= editor.email %></td>
+            <td><%= editor.articles_count.to_i %></td>
+            <td><%= link_to 'Destroy', editor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-danger' if can? :update, @editor %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-centered"><%= will_paginate @editors, renderer: BootstrapPagination::Rails %></div>
 </div>
 
-<%= will_paginate @editors %>
+
 
 
