@@ -46,11 +46,32 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 ### Set up
 
 Run the below commands to set up the project.
-* Clone the repo - git clone https://github.com/Swati24/sample_app.git
-* Install Gems - bundle install
-* Create Database - rake db:create
-* Migrate Database - rake db:migrate
-* Add some dummy users to your database - rake db:seed. This will add 3 users in your database with following details
+
+* Clone the repo -
+```console
+git clone https://github.com/Swati24/sample_app.git
+```
+
+* Install Gems -
+```ruby
+bundle install
+```
+
+* Create Database -
+```ruby
+rake db:create
+```
+
+* Migrate Database -
+```ruby
+rake db:migrate
+```
+
+* To add some dummy users to your database -
+```ruby
+rake db:seed
+```
+* This will populate your database with following 3 users:
 
 ```console
 Admin
@@ -70,16 +91,21 @@ Reporter
 	Role: reporter
 ```
 
-* Run rails server - rails s
-
+* Run rails server
+```ruby
+rails s
+```
 ### Start using the application
 
 Find this app on http://sampleapp24.herokuapp.com/
-* To access Admin - http://sampleapp24.herokuapp.com/admin
-```console
-email: admin@example.com
-password: password
-```
+	Login into the app as per the using the credentials of the desired role.
+
+To access Admin - http://sampleapp24.herokuapp.com/admin
+	Admin Login credentials
+	```console
+	email: admin@example.com
+	password: password
+	```
 
 ### Useful Commands
 
