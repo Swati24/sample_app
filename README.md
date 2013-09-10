@@ -39,8 +39,9 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 * Guest is a visitor in logged out state.
 * Any user who logins into the app will become the reporter.
 * Only Admin can create an editor and the editor will have to forgot password to change the password and login. An editor can be notified via email.
-* An article can have only two states - drafted and published
-* Once an article gets published it cannot be ubpublished or converted to drafted state.
+* An article can have only two states - drafted and published.
+* Once an article gets published it cannot be unpublished or converted to drafted state.
+* Articles content will be visible as plain text. Markdown has not been implemented.
 
 ### Set up
 
@@ -71,6 +72,15 @@ Reporter
 
 * Run rails server - rails s
 
+### Start using the application
+
+Find this app on http://sampleapp24.herokuapp.com/
+* To access Admin - http://sampleapp24.herokuapp.com/admin
+```console
+email: admin@example.com
+password: password
+```
+
 ### Useful Commands
 
 * To find missing indexes:
@@ -87,9 +97,3 @@ railroady -M | neato -Tpng > models.png
 rails generate rails_footnotes:install
 ```
 
-* To access Admin
-```ruby
-url: http://sampleapp24.herokuapp.com/admin
-email: admin@example.com
-password: password
-```
