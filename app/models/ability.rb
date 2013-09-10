@@ -12,10 +12,12 @@ class Ability
     can [:drafts, :update], Article do |article|
       article.try(:user) == user
     end
+    can :read, User
   end
 
   def editor(user)
     can [:drafts, :publish, :update, :create], Article
+    can :read, User
   end
 
   def admin(user)

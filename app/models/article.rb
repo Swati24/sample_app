@@ -37,4 +37,8 @@ class Article < ActiveRecord::Base
      drafted
     end
   end
+
+  def state?(value)
+    state == value.to_s
+  end
 end

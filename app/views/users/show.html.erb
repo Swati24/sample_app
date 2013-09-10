@@ -1,4 +1,5 @@
 <h2>User</h2>
+<%= link_to "Notify Editor via email ", notify_editor_user_path(@user), :class => 'btn btn-info pull-right' %>
 <p>
   <b>Name:</b>
   <%= @user.name %>
@@ -14,5 +15,6 @@
   <%= @user.articles_count.to_i %>
 </p>
 
-<%= link_to "Notify Editor via email", notify_editor_user_path(@user), :class => 'btn btn-info' %>
-<%= link_to 'Back', :back, :class => 'btn btn-primary' %>
+
+<%= render 'articles/list', articles: @articles, loc: "show" %>
+

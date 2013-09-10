@@ -1,0 +1,34 @@
+<% unless articles.count == 0 %>
+  <h2>Articles</h2>
+  <div class="span8">
+    <div class="table-responsive">
+      <table class="table table-condensed  table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Article Wriiten by</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= link_to 'New Article', new_article_path, :class => 'btn btn-primary pull-right' if current_user and loc!= "show" %>
+          <% articles.each do |article| %>
+            <tr>
+              <td><%= link_to article.title, article %></td>
+              <td><%=h truncate(article.content, length: 30) %></td>
+              <td><%= link_to article.user.try(:name), article.user unless article.user.nil? %></td>
+              <% get_valid_actions(article, loc).each do |action| %>
+                 <td><%= action.html_safe %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination-centered"><%= will_paginate articles, renderer: BootstrapPagination::Rails %></div>
+  </div>
+<% else %>
+  <h4>No articles in this category!!</h4>
+<% end %>

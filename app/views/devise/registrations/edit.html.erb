@@ -4,8 +4,8 @@
 
   <%= f.input :email, input_html: {disabled: true} %>
 
-  <%= f.input :current_password, :hint => "we need your current password to confirm your changes" %>
-  <%= f.input :password, label: "New Password", hint: "leave blank if you don't want to change it" %>
+  <%= f.input :current_password %>
+  <%= f.input :password, label: "New Password" %>
 
   <%= f.button :submit, "Update", :class => 'btn btn-primary' %>
 <% end %>
