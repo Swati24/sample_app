@@ -19,7 +19,7 @@ Rails 3.2 example application shows how to manage set of article's permissions a
 * [BetterErrors](https://github.com/charliesome/better_errors): is a tool to replace the standard Rails error page with a much better and more useful error page
 * [Mailcatcher](https://github.com/sj26/mailcatcher): is a tool to catches mail and serves it through a dream.
 * [Annotate](https://github.com/ctran/annotate_models): is a tool to summarize the current schema to the top or bottom of models, fixtures, routes etc.
-* [WillPaginate-Bootstrap](https://github.com/mislav/will_paginate) for styled pagination.
+* [WillPaginate-Bootstrap](https://github.com/nickpad/will_paginate-bootstrap) for styled pagination.
 * [ActiveAdmin](https://github.com/gregbell/active_admin): for creating elegant backends for website administration.
 * [Turbolinks](https://github.com/rails/turbolinks/): to intsruct browser not to recompile the JavaScript and CSS between each page change.
 * [Heroku](https://github.com/heroku/heroku): For Server Hosting
