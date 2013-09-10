@@ -106,10 +106,8 @@ To access Admin - http://sampleapp24.herokuapp.com/admin
 
 	Admin Login credentials
 
-	```console
 	email: admin@example.com
 	password: password
-	```
 
 ### Useful Commands
 
